@@ -1,0 +1,21 @@
+﻿@using Odev.ViewModel;
+@model List<ProductsViewModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Ürün Miktarı</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var productview in Model)
+        {
+            <tr>
+                <td>@productview.ProductName@*Orderdetail modelinden product modeline gidilip productname getirilecek*@</td>
+                <td>@productview.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>

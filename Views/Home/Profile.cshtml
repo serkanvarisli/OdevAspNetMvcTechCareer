@@ -1,0 +1,29 @@
+﻿@model List<Employee>
+
+
+        @foreach (var employee in Model)
+        {
+    <b>Ad:</b>
+    <input type="text" value="@employee.FirstName" id="tb1" class="hidden-border" readonly/> 
+    <br />
+    <b>Soyad:</b>
+    <input type="text" value="@employee.LastName" id="tb2" class="hidden-border" readonly />
+    <br />
+    <b>Pozisyon:</b>
+    <input type="text" value="@employee.Title" id="tb3" class="hidden-border" readonly />
+    <br />
+    <b>Doğum Tarihi:</b>
+    <input type="datetime" value="@employee.BirthDate" class="hidden-border" id="bd" readonly>
+    <br />
+    <b>Telefon no:</b>
+    <input type="text" value="@employee.HomePhone" id="tb4" class="hidden-border" readonly />
+    <br />
+    <b>Adres:</b>
+    <input type="text" value="@employee.Address" id="tb5" class="hidden-border" readonly />
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary" id="edit" >Düzenle</button>
+    <button type="submit" class="btn btn-secondary" hidden id="finishedit">Düzenlemeyi bitir</button>
+    <button type="submit" class="btn btn-warning">Güncelle</button>
+
+        }
