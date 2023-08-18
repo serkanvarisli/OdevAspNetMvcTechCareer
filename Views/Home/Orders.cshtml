@@ -1,6 +1,7 @@
 ﻿@model List<OrderDetail>
 
 <table>
+    <h3>Siparişler</h3>
         <tr>
             <th>Sipariş No  </th>
             <th>|</th>
@@ -17,7 +18,8 @@
                 <td>@orderDetail.Order.OrderDate</td>
                 <td>|</td>
 
-                <td>@orderDetail.Order.Customer.ContactName @*order tablosundan müşteri tablosu getirilecek ve müşteri adı çekilecek*@</td>
+                <td>@orderDetail.Order.Customer.ContactName</td>
+
                 <td>
                     <a asp-action="Products" asp-route-orderId="@orderDetail.OrderId">Ürünler</a> 
                     
