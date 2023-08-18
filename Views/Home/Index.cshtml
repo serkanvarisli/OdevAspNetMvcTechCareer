@@ -1,20 +1,22 @@
 ﻿@model List<Employee>
 
 <table>
-    <thead>
+    <h3>Çalışanlar</h3>
         <tr>
             <th>Ad</th>
+	    	<th>|</th>
             <th>Soyad</th>
+            <th>|</th>
             <th>Ünvan</th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
         @foreach (var employee in Model)
         {
             <tr>
                 <td>@employee.FirstName</td>
+			<td>|</td>
                 <td>@employee.LastName</td>
+			<td>|</td>
                 <td>@employee.Title</td>
                 <td>
                     <a asp-action="Orders" asp-route-employeeId="@employee.EmployeeId">Siparişler</a> |
@@ -22,5 +24,4 @@
                 </td>
             </tr>
         }
-    </tbody>
 </table>
