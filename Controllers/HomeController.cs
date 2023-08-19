@@ -46,30 +46,20 @@ namespace Odev.Controllers
 
             return View(products);
         }
-
+        [HttpGet]
         public IActionResult Profile(int employeeId)
         {
-            var employee = _context.Employees.Where(e => e.EmployeeId == employeeId).ToList();
+            var employee = _context.Employees.FirstOrDefault(e => e.EmployeeId == employeeId);
 
 			return View(employee);
         }
-        //[HttpPost]
-        //public IActionResult UpdateProfile(Employee employee)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var existingEmployee = _context.Employees.FirstOrDefault(e => e.EmployeeID == employee.EmployeeID);
-        //        if (existingEmployee != null)
-        //        {
-        //            existingEmployee.FirstName = employee.FirstName;
-        //            existingEmployee.LastName = employee.LastName;
-        //            existingEmployee.Title = employee.Title;
-        //            // Diğer özellikler
-        //            _context.SaveChanges();
-        //            return RedirectToAction("Profile", new { employeeId = existingEmployee.EmployeeID });
-        //        }
-        //    }
-        //    return View("Profile", employee);
-        //}
+        [HttpPost]
+        public IActionResult UpdateProfile(Employee updateEmployee)
+        {
+            _context.Employees.Update(updateEmployee);
+            _context.SaveChanges();
+            return RedirectToAction("Index", new { employeeId = updateEmployee.EmployeeId });
+        }
+
     }
 }

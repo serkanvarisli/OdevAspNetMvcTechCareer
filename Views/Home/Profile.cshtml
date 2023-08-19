@@ -1,29 +1,31 @@
-﻿@model List<Employee>
+﻿@model Employee
 
 <h3>Profilim</h3>
 
-    @foreach (var employee in Model)
-    {
+<form asp-controller="Home" asp-action="UpdateProfile" method="post">
+	    <input type="hidden" asp-for="EmployeeId" />
         <b>Ad:</b>
-        <input type="text" value="@employee.FirstName" id="tb1" class="hidden-border" readonly/> 
-        <br/>
+        <input type="text" asp-for="FirstName" value="@Model.FirstName" id="tb1" class="hidden-border" readonly />
+        <br />
         <b>Soyad:</b>
-        <input type="text" value="@employee.LastName" id="tb2" class="hidden-border" readonly />
+    <input type="text" asp-for="LastName" value="@Model.LastName" id="tb2" class="hidden-border" readonly />
         <br />
         <b>Pozisyon:</b>
-        <input type="text" value="@employee.Title" id="tb3" class="hidden-border" readonly />
+    <input type="text" asp-for="Title" value="@Model.Title" id="tb3" class="hidden-border" readonly />
         <br />
         <b>Doğum Tarihi:</b>
-        <input type="datetime" value="@employee.BirthDate" class="hidden-border" id="bd" readonly>
+    <input type="datetime" asp-for="BirthDate" value="@Model.BirthDate.ToString()" class="hidden-border" id="bd" readonly>
         <br />
         <b>Telefon no:</b>
-        <input type="text" value="@employee.HomePhone" id="tb4" class="hidden-border" readonly />
+    <input type="text" asp-for="HomePhone" value="@Model.HomePhone" id="tb4" class="hidden-border" readonly />
         <br />
         <b>Adres:</b>
-        <input type="text" value="@employee.Address" id="tb5" class="hidden-border" readonly />
+    <input type="text" asp-for="Address" value="@Model.Address" id="tb5" class="hidden-border" readonly />
         <br />
         <br />
-        <button type="submit" class="btn btn-primary" id="edit" >Düzenle</button>
-        <button type="submit" class="btn btn-secondary" hidden id="finishedit">Düzenlemeyi bitir</button>
+        <button type="button" class="btn btn-primary" id="edit">Düzenle</button>
+        <button type="button" class="btn btn-secondary" hidden id="finishedit">Düzenlemeyi bitir</button>
+
         <button type="submit" class="btn btn-warning">Güncelle</button>
-        }
+    </form>    
+    @*}*@
