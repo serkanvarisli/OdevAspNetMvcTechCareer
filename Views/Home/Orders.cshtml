@@ -1,4 +1,4 @@
-﻿@model List<OrderDetail>
+﻿@model List<Order>
 
 <table class="table table-striped">
     <h3>Siparişler</h3>
@@ -15,10 +15,10 @@
             <tr>
                 <td>@orderDetail.OrderId</td>
                 <td>|</td>
-                <td>@orderDetail.Order.OrderDate</td>
+                <td>@orderDetail.OrderDate</td>
                 <td>|</td>
 
-                <td>@orderDetail.Order.Customer.ContactName</td>
+                <td>@orderDetail.Customer.ContactName</td>
 
                 <td>
                     <a asp-action="Products" asp-route-orderId="@orderDetail.OrderId">Ürünler</a> 

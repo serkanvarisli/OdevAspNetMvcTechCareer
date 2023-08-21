@@ -23,11 +23,9 @@ namespace Odev.Controllers
 
         public IActionResult Orders(int employeeId)
         {
-            var orders = _context.OrderDetails
-                .Include(o=>o.Order)
-                .ThenInclude(o => o.Customer)
-                .Include(o=>o.Product)
-                .Where(o => o.Order.EmployeeId == employeeId)
+            var orders = _context.Orders
+                .Include(o => o.Customer)
+                .Where(o => o.EmployeeId == employeeId)
                 .ToList();
             return View(orders);
         }
