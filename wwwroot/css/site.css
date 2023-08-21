@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+/*.borderless-input {
+    border: none;
+    border-radius: 0;*/ /* If you want to remove border-radius as well */
+    /*box-shadow: none;*/ /* If you want to remove any shadow */
+/*}*/

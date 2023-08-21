@@ -5,22 +5,22 @@
 <form asp-controller="Home" asp-action="UpdateProfile" method="post">
 	    <input type="hidden" asp-for="EmployeeId" />
         <b>Ad:</b>
-        <input type="text" asp-for="FirstName" value="@Model.FirstName" id="tb1" class="hidden-border" readonly />
+    <span asp-for="FirstName">@Model.FirstName</span>
         <br />
         <b>Soyad:</b>
-    <input type="text" asp-for="LastName" value="@Model.LastName" id="tb2" class="hidden-border" readonly />
+    <span asp-for="FirstName">@Model.LastName</span>
         <br />
         <b>Pozisyon:</b>
-    <input type="text" asp-for="Title" value="@Model.Title" id="tb3" class="hidden-border" readonly />
+    <span>@Model.Title</span>
         <br />
         <b>Doğum Tarihi:</b>
-    <input type="datetime" asp-for="BirthDate" value="@Model.BirthDate.ToString()" class="hidden-border" id="bd" readonly>
+    <span>@Model.BirthDate</span>
         <br />
         <b>Telefon no:</b>
-    <input type="text" asp-for="HomePhone" value="@Model.HomePhone" id="tb4" class="hidden-border" readonly />
+    <input type="text" asp-for="HomePhone" value="@Model.HomePhone" id="tb4" class="borderless-input" readonly />
         <br />
         <b>Adres:</b>
-    <input type="text" asp-for="Address" value="@Model.Address" id="tb5" class="hidden-border" readonly />
+    <input type="text" asp-for="Address" value="@Model.Address" id="tb5" class="borderless-input" readonly />
         <br />
         <br />
         <button type="button" class="btn btn-primary" id="edit">Düzenle</button>
