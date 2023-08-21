@@ -42,7 +42,6 @@ namespace Odev.Controllers
                     Quantity = o.Quantity
                 })
                 .ToList();
-            
 
             return View(products);
         }
